@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heartroot Creations — Pottery & Art</title>
+  <meta name="description" content="Heartroot Creations — pottery, painting, and art rooted in honesty. By Katie.">
+  <meta property="og:title" content="Heartroot Creations">
+  <meta property="og:description" content="Pottery, painting, and art rooted in honesty.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --bg-card: #111111;
+      --gold: #c9a84c;
+      --gold-light: #e8d48b;
+      --red: #8b2020;
+      --cream: #e8e0d0;
+      --text: #c8c0b4;
+      --text-dim: #7a746a;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse at 30% 40%, rgba(201, 168, 76, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 60%, rgba(139, 32, 32, 0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-mark {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 32px;
+      opacity: 0.6;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero .tagline {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: var(--text-dim);
+      margin-bottom: 48px;
+    }
+
+    .hero .scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.8; }
+    }
+
+    /* ── Sections ── */
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .section-rule {
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 32px;
+      opacity: 0.5;
+    }
+
+    /* ── Featured Piece ── */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      padding: 80px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .featured-image {
+      position: relative;
+    }
+
+    .featured-image img {
+      width: 100%;
+      border-radius: 4px;
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(201, 168, 76, 0.1);
+    }
+
+    .featured-text h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .featured-text .medium {
+      font-size: 13px;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .featured-text p {
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+
+    .featured-text .artist-note {
+      border-left: 2px solid var(--gold);
+      padding-left: 20px;
+      margin-top: 24px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--cream);
+      line-height: 1.8;
+    }
+
+    /* ── About ── */
+    .about-content {
+      font-size: 15px;
+      max-width: 640px;
+    }
+
+    .about-content p {
+      margin-bottom: 16px;
+    }
+
+    /* ── Contact ── */
+    .contact {
+      text-align: center;
+      padding: 80px 24px 120px;
+    }
+
+    .contact p {
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+
+    .contact a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+      transition: border-color 0.3s;
+    }
+
+    .contact a:hover {
+      border-bottom-color: var(--gold);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 12px;
+      color: var(--text-dim);
+      border-top: 1px solid rgba(201, 168, 76, 0.08);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 700px) {
+      .featured {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 60px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-mark"></div>
+    <h1>Heart<span>root</span> Creations</h1>
+    <p class="tagline">pottery, painting, and art rooted in honesty</p>
+    <div class="scroll-hint">scroll</div>
+  </header>
+
+  <!-- Featured Piece -->
+  <div class="featured">
+    <div class="featured-image">
+      <img src="images/shattered-reflection.jpg" alt="Shattered Reflection — mixed media painting by Katie. A woman's screaming face fractured in broken glass, with a child curled at the bottom. Black, white, red, and gold.">
+    </div>
+    <div class="featured-text">
+      <h2>Shattered Reflection</h2>
+      <p class="medium">Mixed Media on Canvas</p>
+      <p>
+        A woman screams into a broken mirror. Her face fractures across the shards — 
+        distorted, stretched, impossible to look away from. Deep red bleeds through 
+        the cracks like a wound finally exposed. At the bottom, barely visible, 
+        a child curls up beneath the shattering.
+      </p>
+      <p>
+        They are the same person.
+      </p>
+      <p>
+        The gold that fills the fracture lines isn't healing — it's the years. 
+        Everything built on top of the break to keep going. Beautiful from the 
+        outside. But still filling cracks.
+      </p>
+      <div class="artist-note">
+        "I broke but I didn't scatter."
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section>
+    <h2 class="section-title">About</h2>
+    <div class="section-rule"></div>
+    <div class="about-content">
+      <p>
+        Heartroot Creations is the work of Katie — a potter, painter, and maker 
+        based in Michigan. Her work lives in the space between breaking and 
+        becoming. Clay and canvas. Fire and patience.
+      </p>
+      <p>
+        Rooted in honesty. Made by hand.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact">
+    <h2 class="section-title">Get in Touch</h2>
+    <div class="section-rule" style="margin-left:auto;margin-right:auto;"></div>
+    <p>For inquiries, commissions, or to say hello.</p>
+    <p><a href="mailto:hello@heartrootcreations.art">hello@heartrootcreations.art</a></p>
+  </section>
+
+  <footer>
+    &copy; 2026 Heartroot Creations. All rights reserved.
+  </footer>
+
+</body>
+</html>
